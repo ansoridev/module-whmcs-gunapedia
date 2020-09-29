@@ -5,7 +5,7 @@ This is a custom WHMCS module built for our resellers who would like to register
 
 ## Installation
 1. Download the module via the following [link](https://github.com/ansoridev/module-whmcs-gunapedia)
-1. Copy the `krystal` directory into the respective WHMCS directory in your WHMCS setup: `/whmcs/modules/registrars/`
+1. Copy the `gunapedia` directory into the respective WHMCS directory in your WHMCS setup: `/whmcs/modules/registrars/`
 2. Go to WHMCS, Setup, Domain Registrars and activate the `GunaPedia - Domain Registrar` registrar
 3. Enter your API username and API secret. These can be obtained via your [client area](https://gunapedia.com/).
 4. Payment automatically charge your balances.
