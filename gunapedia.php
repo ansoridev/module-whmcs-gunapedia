@@ -239,3 +239,66 @@ function gunapedia_Sync($params)
 		return ["error" => get_class($e) . " - " . $e->getMessage()];
 	}
 }
+
+function gunapedia_RegisterNameserver($params){
+	$API = gunapedia_getAPI($params);
+	$ns = str_replace('.' . $params['domainname'],"", $params['nameserver']);
+
+	try
+	{
+		$API->call("domain/update/gluerecord", "PUT", [], [
+			"domain" => $params['domainname'],
+			"record" => $ns,
+			"ipAddress" => $params['ipaddress']
+		]);
+		
+		return ["error" => ""];
+	}
+	catch(\Gunapedia\API1\Exceptions\Exception $e)
+	{
+		return ["error" => get_class($e) . " - " . $e->getMessage()];
+	}
+}
+
+function gunapedia_ModifyNameserver($params){
+	$API = gunapedia_getAPI($params);
+	$ns = str_replace('.' . $params['domainname'],"", $params['nameserver']);
+
+	try
+	{
+		$API->call("domain/update/gluerecord", "PUT", [], [
+			"domain" => $params['domainname'],
+			"record" => $ns,
+			"ipAddress" => $params['newipaddress']
+		]);
+		
+		return ["error" => ""];
+	}
+	catch(\Gunapedia\API1\Exceptions\Exception $e)
+	{
+		return ["error" => get_class($e) . " - " . $e->getMessage()];
+	}
+}
+
+function gunapedia_DeleteNameserver($params){
+	return ["error" => "This function still under development!"];
+}
+
+function gunapedia_CustomGetChildNameservers($params){
+	$API = gunapedia_getAPI($params);
+
+	try
+	{
+		$hasilnya = $API->call("domain/data/info", "POST", [], ["domain={$params['domainname']}"])["data"]["gluerecord"];
+
+		foreach ($hasilnya as $ns) {
+            $result .= "<li>{$ns['record']} ({$ns['ip']})\n";
+        }
+
+        return ['error' => "<br /><h4>List of child nameservers:</h4><ul> $result </ul>"];
+	}
+	catch(\Gunapedia\API1\Exceptions\Exception $e)
+	{
+		return ["error" => get_class($e) . " - " . $e->getMessage()];
+	}
+}
