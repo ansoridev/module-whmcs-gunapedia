@@ -33,7 +33,6 @@ function gunapedia_GetNameservers($params)
 	{
 		$hasilnya = $API->call("domain/data/info", "POST", [], ["domain={$params['domainname']}"])["data"];
 		$nameservernya = [
-			"success" => true,
 			"ns1" => $hasilnya['nameserver1'],
 			"ns2" => $hasilnya['nameserver2'],
 			"ns3" => $hasilnya['nameserver3'],
