@@ -1,0 +1,33 @@
+{
+    "schema": "1.2",
+    "type": "whmcs-registrars",
+    "name": "gunapedia",
+    "license": "proprietary",
+    "category": "domains",
+    "description": {
+      "name": "GunaPedia Domains",
+      "tagline": "GunaPedia.com is a website that provides hosting, domain reseller that offer affordable prices with amazing quality",
+      "long": "## Ayo Buat Akun\nDengan otomatisasi yang memadai, GunaPedia dapat membantu anda berjualan domain. [Learn more and signup &raquo;](https://gunapedia.com)",
+      "features": [
+        "Automated Domain Registrations",
+        "Ability to View/Change Nameservers & WHOIS Info",
+        "Domain Locking, ID Protection, EPP Code Retrieval",
+        "Private Nameservers",
+        "Reliable, Rock solid API"
+      ]
+    },
+    "logo": {
+      "filename": "logo.png"
+    },
+    "support": {
+      "homepage": "https:\/\/www.gunapedia.com\/",
+      "docs_url": "https:\/\/gunapedia.com\/APIDocumentation"
+    },
+    "authors": [
+      {
+        "name": "Ahmad Ansori",
+        "homepage": "https:\/\/www.ahmadansori.com\/"
+      }
+    ]
+  }
+  
